@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # apps
     'todos',
-
+    'accounts',
 
     # 3rd party
 
@@ -131,3 +131,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.User'
+
+# 세션 기간 설정
+DAY_IN_SECONDS = 86400
+SESSION_COOKIE_AGE = DAY_IN_SECONDS
+
+# 클라이언트가 요청을 보낼때마다 세션 시간을 갱신
+SESSION_SAVE_EVERY_REQUEST = True

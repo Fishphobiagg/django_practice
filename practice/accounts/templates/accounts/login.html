@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Login Page</h1>
+  {% comment "" %}
+  @login_required 썼을 때, 
+  next = 라는 url query param을 쓸 수 있다.
+  ? url query param: 사용자가 로그인 후 직전 요청으로 갈 수 있게 해주는 주소
+  그떄, 우리는 로그인 폼의 ACTION을 공백으로 놓아야 한다.
+  {% endcomment %}
+
+
+<form action="" method='POST'>
+  {{form.as_p}}
+  {% csrf_token %}
+  <input type="submit" value='login'>
+</form>
+</body>
+</html>
