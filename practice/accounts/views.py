@@ -13,7 +13,7 @@ def login(request):
         if form.is_valid():
             auth_login(request, form.get_user())
             # return redirect('todos:index')
-            return redirect(request.GET.get('next') or 'todos:index')
+            return redirect('todos:index')
     else:
         form = AuthenticationForm()
     context = {

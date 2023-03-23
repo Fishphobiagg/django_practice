@@ -15,7 +15,6 @@ def index(request):
     }
     return render(request, 'todos/index.html', context)
 
-@login_required
 def create(request):
     print(request)
     print(request.method)
@@ -30,7 +29,6 @@ def create(request):
 
         return redirect('todos:index')
 
-@login_required
 def update(request, pk):
     print('update')
     todo = Todo.objects.get(pk=pk)
@@ -47,7 +45,7 @@ def update(request, pk):
         }
     return render(request, 'todos/update.html', context)
 
-@login_required
+
 def delete(request, pk):
     if request.method == 'POST':
         todo = Todo.objects.get(pk=pk)
@@ -56,7 +54,6 @@ def delete(request, pk):
         pass
     return redirect('todos:index')
 
-@login_required
 def done(request, pk):
     # Auth가 있다면?
     todo = Todo.objects.get(pk=pk)
