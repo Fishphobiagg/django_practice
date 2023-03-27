@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>메인화면</h1>
+<hr>
+
+{% for popo in posts %}
+<p>{{popo.pk}}번째 글</p>
+{{popo.content}}
+<hr>
+{% endfor %}
+
+
+{% endblock content %}
