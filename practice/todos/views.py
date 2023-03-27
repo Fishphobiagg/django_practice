@@ -60,3 +60,4 @@ def done(request, pk):
     todo.isCompleted = True
     todo.save()
     return redirect('todos:index')
+
